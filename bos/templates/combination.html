@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Routine for Combination Skin</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5e6f7; /* Soft lavender background */
+        }
+
+        .header {
+            background-color: #7b4397; /* Deep purple */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .routine-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .routine-card {
+            background-color: #fff;
+            border: 2px solid #dab3e1;
+            border-radius: 15px;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .routine-card h3 {
+            color: #7b4397;
+        }
+
+        .routine-card p {
+            color: #555;
+        }
+
+        .routine-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .routine-card {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Skincare Routine for Combination Skin</h1>
+    </div>
+
+    <div class="routine-container">
+        <div class="routine-card" onclick="window.location.href='/products/cleanser';">
+            <h3>Cleanser</h3>
+            <p>Balances oily and dry areas effectively.</p>
+        </div>
+        <div class="routine-card" onclick="window.location.href='/products/toner';">
+            <h3>Toner</h3>
+            <p>Minimizes oil and hydrates dry patches.</p>
+        </div>
+        <div class="routine-card" onclick="window.location.href='/products/serum';">
+            <h3>Serum</h3>
+            <p>Targets uneven skin and hydration.</p>
+        </div>
+        <div class="routine-card" onclick="window.location.href='/products/moisturizer';">
+            <h3>Moisturizer</h3>
+            <p>Lightweight for oily areas, rich for dry areas.</p>
+        </div>
+        <div class="routine-card" onclick="window.location.href='/products/sunscreen';">
+            <h3>Sunscreen</h3>
+            <p>Prevents sun damage while keeping skin balanced.</p>
+        </div>
+    </div>
+</body>
+</html>
