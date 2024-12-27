@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Skin Type</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fef5f7, #fde3e8); /* Matching gradient */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            padding: 40px;
+            color: #333;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6f61;
+            margin-bottom: 30px;
+        }
+
+        .skin-type-options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skin-type-card {
+            background-color: #fff;
+            padding: 20px;
+            width: 180px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .skin-type-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .skin-type-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .skin-type-card h3 {
+            font-size: 1.5rem;
+            color: #5e5e5e;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .skin-type-card p {
+            color: #7d7d7d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .oily {
+            background-color: #fce2e2; /* Soft Pink for Oily */
+        }
+
+        .dry {
+            background-color: #e2f7fc; /* Soft Light Blue for Dry */
+        }
+
+        .combination {
+            background-color: #f9f6e0; /* Soft Yellow for Combination */
+        }
+
+        .sensitive {
+            background-color: #e8f5e9; /* Soft Light Green for Sensitive */
+        }
+
+        /* Button Styles */
+        .button {
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            background: linear-gradient(135deg, #ff9a8b, #ff6f61);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0px 10px 20px rgba(255, 111, 97, 0.4);
+            margin-top: 30px;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
+            transform: scale(1.1);
+            box-shadow: 0px 15px 30px rgba(255, 111, 97, 0.6);
+        }
+
+        /* Bubble Animations */
+        .animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 111, 97, 0.5);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.8);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(50vh) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(0.8);
+                opacity: 0.4;
+            }
+        }
+
+        .bubble:nth-child(1) {
+            left: 10%;
+            animation-duration: 6s;
+            width: 50px;
+            height: 50px;
+        }
+
+        .bubble:nth-child(2) {
+            left: 50%;
+            animation-duration: 8s;
+            animation-delay: 1s;
+            width: 60px;
+            height: 60px;
+        }
+
+        .bubble:nth-child(3) {
+            left: 70%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+            width: 45px;
+            height: 45px;
+        }
+
+        .bubble:nth-child(4) {
+            left: 30%;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            width: 55px;
+            height: 55px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bubble Animation Layer -->
+    <div class="animation-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Select Your Skin Type</h1>
+        
+        <!-- Skin Type Options -->
+        <div class="skin-type-options">
+            <!-- Oily Skin Card -->
+            <div class="skin-type-card oily" onclick="window.location.href='/skincare/oilyskin';">
+                <img src="icons/oily-skin.png" alt="Oily Skin Icon">
+                <h3>Oily Skin</h3>
+                <p>Prone to shine and clogged pores. Needs gentle oil control.</p>
+            </div>
+
+            <!-- Dry Skin Card -->
+            <div class="skin-type-card dry" onclick="window.location.href='/skincare/dryskin';">
+                <img src="icons/dry-skin.png" alt="Dry Skin Icon">
+                <h3>Dry Skin</h3>
+                <p>Feels tight and flaky. Requires deep hydration.</p>
+            </div>
+
+            <!-- Combination Skin Card -->
+            <div class="skin-type-card combination" onclick="window.location.href='/skincare/combination';">
+                <img src="icons/combination-skin.png" alt="Combination Skin Icon">
+                <h3>Combination Skin</h3>
+                <p>Oily in some areas, dry in others. Balanced care needed.</p>
+            </div>
+
+            <!-- Sensitive Skin Card -->
+            <div class="skin-type-card sensitive" onclick="window.location.href='/skincare/sensitiveskin';">
+                <img src="icons/sensitive-skin.png" alt="Sensitive Skin Icon">
+                <h3>Sensitive Skin</h3>
+                <p>Prone to redness and irritation. Needs soothing products.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

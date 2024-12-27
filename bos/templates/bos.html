@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MyGlamm</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fef5f7, #fde3e8);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Header Section (Navbar) */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #ff9a8b, #ff6f61);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Sign Up / Sign In Buttons */
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .auth-buttons a {
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            background: linear-gradient(135deg, #ff9a8b, #ff6f61);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0px 10px 20px rgba(255, 111, 97, 0.4);
+        }
+        .auth-buttons a:hover {
+            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
+            transform: scale(1.1);
+            box-shadow: 0px 15px 30px rgba(255, 111, 97, 0.6);
+        }
+
+        /* Main Content */
+        .heading {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ff6f61;
+            margin-top: 100px; /* Adjust for header space */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .button {
+            padding: 20px 50px;
+            font-size: 2rem;
+            border: none;
+            border-radius: 50px;
+            color: #fff;
+            background: linear-gradient(135deg, #ff9a8b, #ff6f61);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0px 10px 20px rgba(255, 111, 97, 0.4);
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #ff6f61, #ff9a8b);
+            transform: scale(1.1);
+            box-shadow: 0px 15px 30px rgba(255, 111, 97, 0.6);
+        }
+
+        /* Bubble Animations */
+        .animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 111, 97, 0.5);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.8);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(50vh) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(0.8);
+                opacity: 0.4;
+            }
+        }
+
+        .bubble:nth-child(1) {
+            left: 10%;
+            animation-duration: 6s;
+            width: 50px;
+            height: 50px;
+        }
+        .bubble:nth-child(2) {
+            left: 50%;
+            animation-duration: 8s;
+            animation-delay: 1s;
+            width: 60px;
+            height: 60px;
+        }
+        .bubble:nth-child(3) {
+            left: 70%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+            width: 45px;
+            height: 45px;
+        }
+        .bubble:nth-child(4) {
+            left: 30%;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            width: 55px;
+            height: 55px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section (Navbar) -->
+    <div class="header">
+        <div class="logo">MyGlamm</div>
+        <div class="auth-buttons">
+            <a href="/signin" class="button">Sign In</a>
+            <a href="/signup" class="button">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Bubble Animation Layer -->
+    <div class="animation-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Main Content -->
+    <h1 class="heading">Discover YourGlamm</h1>
+    <div class="buttons">
+        <a href="/skincare/" class="button">Skincare</a>
+        <a href="/facecare/" class="button">Facecare</a>
+    </div>
+
+</body>
+</html>
